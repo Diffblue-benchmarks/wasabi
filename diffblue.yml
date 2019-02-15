@@ -1,0 +1,557 @@
+# Tested on Deeptest release 1.12.0
+cbmcArguments:
+  java-generate-no-comments: true
+units:
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/data/SegmentationDataProvider.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/data/SegmentationDataProvider.java
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/data/PriorityDataProvider.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/data/PriorityDataProvider.java
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/data/SharedExperimentDataProvider.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/data/SharedExperimentDataProvider.java
+  - target:
+    - dir: modules/cassandra-datastax/target/classes
+      file: com/intuit/wasabi/cassandra/datastax/DefaultCassandraDriver.class
+      sourceDir: modules/cassandra-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/cassandra/datastax/DefaultCassandraDriver.java
+    # Child of DefaultCassandraDriver.class
+    - dir: modules/cassandra-datastax/target/classes
+      file: com/intuit/wasabi/cassandra/datastax/health/DefaultCassandraHealthCheck.class
+      sourceDir: modules/cassandra-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/cassandra/datastax/health/DefaultCassandraHealthCheck.java
+  - target:
+    - dir: modules/experiment-objects/target/classes
+      file: com/intuit/wasabi/experimentobjects/Bucket.class
+      sourceDir: modules/experiment-objects/src/main/java
+      sourceFile: com/intuit/wasabi/experimentobjects/Bucket.java
+    # Child of Bucket.class
+    - dir: modules/experiment-objects/target/classes
+      file: com/intuit/wasabi/experimentobjects/exceptions/InvalidIdentifierException.class
+      sourceDir: modules/experiment-objects/src/main/java
+      sourceFile: com/intuit/wasabi/experimentobjects/exceptions/InvalidIdentifierException.java
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/library/request/Bucket.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/library/request/Bucket.java
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/Bucket.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/Bucket.java
+    # Child of Bucket.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/library/util/serialstrategies/DefaultNameExclusionStrategy.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/library/util/serialstrategies/DefaultNameExclusionStrategy.java
+    # Child of Bucket.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/library/util/serialstrategies/SerializationStrategy.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/library/util/serialstrategies/SerializationStrategy.java
+  - target:
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/pojo/Bucket.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/pojo/Bucket.java
+  - target:
+    - dir: modules/analytics/target/classes
+      file: com/intuit/wasabi/analytics/impl/AnalyticsImpl.class
+      sourceDir: modules/analytics/src/main/java
+      sourceFile: com/intuit/wasabi/analytics/impl/AnalyticsImpl.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics/target/classes
+      file: com/intuit/wasabi/analytics/AnalysisTools.class
+      sourceDir: modules/analytics/src/main/java
+      sourceFile: com/intuit/wasabi/analytics/AnalysisTools.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics/target/classes
+      file: com/intuit/wasabi/analytics/Analytics.class
+      sourceDir: modules/analytics/src/main/java
+      sourceFile: com/intuit/wasabi/analytics/Analytics.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/Event.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/Event.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/Parameters.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/Parameters.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/counts/ActionCounts.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/counts/ActionCounts.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/counts/AssignmentCounts.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/counts/AssignmentCounts.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/counts/BucketCounts.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/counts/BucketCounts.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/counts/Counts.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/counts/Counts.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/counts/DailyCounts.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/counts/DailyCounts.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/counts/ExperimentCounts.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/counts/ExperimentCounts.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/counts/ExperimentCumulativeCounts.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/counts/ExperimentCumulativeCounts.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/BucketBasicStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/BucketBasicStatistics.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/BucketComparison.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/BucketComparison.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/BucketStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/BucketStatistics.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/DailyStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/DailyStatistics.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/ExperimentBasicStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/ExperimentBasicStatistics.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/ExperimentCumulativeStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/ExperimentCumulativeStatistics.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/ExperimentStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/ExperimentStatistics.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/database/target/classes
+      file: com/intuit/wasabi/database/Transaction.class
+      sourceDir: modules/database/src/main/java
+      sourceFile: com/intuit/wasabi/database/Transaction.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/database/target/classes
+      file: com/intuit/wasabi/database/TransactionFactory.class
+      sourceDir: modules/database/src/main/java
+      sourceFile: com/intuit/wasabi/database/TransactionFactory.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/exceptions/target/classes
+      file: com/intuit/wasabi/exceptions/ExperimentNotFoundException.class
+      sourceDir: modules/exceptions/src/main/java
+      sourceFile: com/intuit/wasabi/exceptions/ExperimentNotFoundException.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/experiment/target/classes
+      file: com/intuit/wasabi/experiment/Experiments.class
+      sourceDir: modules/experiment/src/main/java
+      sourceFile: com/intuit/wasabi/experiment/Experiments.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/experiment-objects/target/classes
+      file: com/intuit/wasabi/experimentobjects/Bucket.class
+      sourceDir: modules/experiment-objects/src/main/java
+      sourceFile: com/intuit/wasabi/experimentobjects/Bucket.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/experiment-objects/target/classes
+      file: com/intuit/wasabi/experimentobjects/Context.class
+      sourceDir: modules/experiment-objects/src/main/java
+      sourceFile: com/intuit/wasabi/experimentobjects/Context.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/experiment-objects/target/classes
+      file: com/intuit/wasabi/experimentobjects/Experiment.class
+      sourceDir: modules/experiment-objects/src/main/java
+      sourceFile: com/intuit/wasabi/experimentobjects/Experiment.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/AnalyticsRepository.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/AnalyticsRepository.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/AssignmentsRepository.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/AssignmentsRepository.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/CassandraRepository.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/CassandraRepository.java
+    # Child of AnalyticsImpl.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/ExperimentRepository.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/ExperimentRepository.java
+  - target:
+    - dir: modules/assignment/target/classes
+      file: com/intuit/wasabi/assignment/cache/impl/AssignmentsMetadataCacheHealthCheck.class
+      sourceDir: modules/assignment/src/main/java
+      sourceFile: com/intuit/wasabi/assignment/cache/impl/AssignmentsMetadataCacheHealthCheck.java
+    # Child of AssignmentsMetadataCacheHealthCheck.class
+    - dir: modules/assignment/target/classes
+      file: com/intuit/wasabi/assignment/cache/AssignmentMetadataCacheTimeService.class
+      sourceDir: modules/assignment/src/main/java
+      sourceFile: com/intuit/wasabi/assignment/cache/AssignmentMetadataCacheTimeService.java
+    # Child of AssignmentsMetadataCacheHealthCheck.class
+    - dir: modules/assignment/target/classes
+      file: com/intuit/wasabi/assignment/cache/AssignmentsMetadataCache.class
+      sourceDir: modules/assignment/src/main/java
+      sourceFile: com/intuit/wasabi/assignment/cache/AssignmentsMetadataCache.java
+  - target:
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/metrics/BinomialMetrics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/metrics/BinomialMetrics.java
+    # Child of BinomialMetrics.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/DistinguishableEffectSize.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/DistinguishableEffectSize.java
+    # Child of BinomialMetrics.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/Estimate.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/Estimate.java
+    # Child of BinomialMetrics.class
+    - dir: modules/exceptions/target/classes
+      file: com/intuit/wasabi/exceptions/AnalyticsException.class
+      sourceDir: modules/exceptions/src/main/java
+      sourceFile: com/intuit/wasabi/exceptions/AnalyticsException.java
+  - target:
+    - dir: modules/experiment-objects/target/classes
+      file: com/intuit/wasabi/experimentobjects/exceptions/InvalidExperimentStateException.class
+      sourceDir: modules/experiment-objects/src/main/java
+      sourceFile: com/intuit/wasabi/experimentobjects/exceptions/InvalidExperimentStateException.java
+  - target:
+    - dir: modules/analytics/target/classes
+      file: com/intuit/wasabi/analytics/impl/AnalysisToolsImpl.class
+      sourceDir: modules/analytics/src/main/java
+      sourceFile: com/intuit/wasabi/analytics/impl/AnalysisToolsImpl.java
+    # Child of AnalysisToolsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/metrics/BinomialMetrics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/metrics/BinomialMetrics.java
+    # Child of AnalysisToolsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/AbstractContainerStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/AbstractContainerStatistics.java
+    # Child of AnalysisToolsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/ActionComparisonStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/ActionComparisonStatistics.java
+    # Child of AnalysisToolsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/ActionProgress.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/ActionProgress.java
+    # Child of AnalysisToolsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/ActionRate.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/ActionRate.java
+    # Child of AnalysisToolsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/ComparisonStatistics.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/ComparisonStatistics.java
+    # Child of AnalysisToolsImpl.class
+    - dir: modules/analytics-objects/target/classes
+      file: com/intuit/wasabi/analyticsobjects/statistics/Progress.class
+      sourceDir: modules/analytics-objects/src/main/java
+      sourceFile: com/intuit/wasabi/analyticsobjects/statistics/Progress.java
+  - target:
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/impl/CassandraAuthorizationRepository.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/impl/CassandraAuthorizationRepository.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/authentication-objects/target/classes
+      file: com/intuit/wasabi/authenticationobjects/UserInfo.class
+      sourceDir: modules/authentication-objects/src/main/java
+      sourceFile: com/intuit/wasabi/authenticationobjects/UserInfo.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/authorization-objects/target/classes
+      file: com/intuit/wasabi/authorizationobjects/Role.class
+      sourceDir: modules/authorization-objects/src/main/java
+      sourceFile: com/intuit/wasabi/authorizationobjects/Role.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/authorization-objects/target/classes
+      file: com/intuit/wasabi/authorizationobjects/UserPermissions.class
+      sourceDir: modules/authorization-objects/src/main/java
+      sourceFile: com/intuit/wasabi/authorizationobjects/UserPermissions.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/authorization-objects/target/classes
+      file: com/intuit/wasabi/authorizationobjects/UserPermissionsList.class
+      sourceDir: modules/authorization-objects/src/main/java
+      sourceFile: com/intuit/wasabi/authorizationobjects/UserPermissionsList.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/authorization-objects/target/classes
+      file: com/intuit/wasabi/authorizationobjects/UserRole.class
+      sourceDir: modules/authorization-objects/src/main/java
+      sourceFile: com/intuit/wasabi/authorizationobjects/UserRole.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/authorization-objects/target/classes
+      file: com/intuit/wasabi/authorizationobjects/UserRoleList.class
+      sourceDir: modules/authorization-objects/src/main/java
+      sourceFile: com/intuit/wasabi/authorizationobjects/UserRoleList.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/exceptions/target/classes
+      file: com/intuit/wasabi/exceptions/AuthenticationException.class
+      sourceDir: modules/exceptions/src/main/java
+      sourceFile: com/intuit/wasabi/exceptions/AuthenticationException.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/experiment-objects/target/classes
+      file: com/intuit/wasabi/experimentobjects/Application.class
+      sourceDir: modules/experiment-objects/src/main/java
+      sourceFile: com/intuit/wasabi/experimentobjects/Application.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/AuthorizationRepository.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/AuthorizationRepository.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/RepositoryException.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/RepositoryException.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/accessor/AppRoleAccessor.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/accessor/AppRoleAccessor.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/accessor/ApplicationListAccessor.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/accessor/ApplicationListAccessor.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/accessor/UserInfoAccessor.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/accessor/UserInfoAccessor.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/accessor/UserRoleAccessor.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/accessor/UserRoleAccessor.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/pojo/AppRole.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/pojo/AppRole.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/cassandra/pojo/ApplicationList.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/cassandra/pojo/ApplicationList.java
+    # Child of CassandraAuthorizationRepository.class
+    - dir: modules/user-directory/target/classes
+      file: com/intuit/wasabi/userdirectory/UserDirectory.class
+      sourceDir: modules/user-directory/src/main/java
+      sourceFile: com/intuit/wasabi/userdirectory/UserDirectory.java
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/library/util/RetryListener.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/library/util/RetryListener.java
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/data/AssignmentDataProvider.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/data/AssignmentDataProvider.java
+  - target:
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/service/events/TestUserIDLengthForEventCalls.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/service/events/TestUserIDLengthForEventCalls.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/library/TestBase.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/library/TestBase.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/library/util/Constants.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/library/util/Constants.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/Application.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/Application.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/Assignment.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/Assignment.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/Bucket.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/Bucket.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/Event.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/Event.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/Experiment.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/Experiment.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/User.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/User.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/analytics/ExperimentCounts.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/analytics/ExperimentCounts.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/factory/ApplicationFactory.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/factory/ApplicationFactory.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/factory/BucketFactory.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/factory/BucketFactory.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/factory/ExperimentFactory.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/factory/ExperimentFactory.java
+    # Child of TestUserIDLengthForEventCalls.class
+    - dir: modules/functional-test/target/classes
+      file: com/intuit/wasabi/tests/model/factory/UserFactory.class
+      sourceDir: modules/functional-test/src/main/java
+      sourceFile: com/intuit/wasabi/tests/model/factory/UserFactory.java
+  - target:
+    - dir: modules/event/target/classes
+      file: com/intuit/wasabi/events/impl/EventsExportImpl.class
+      sourceDir: modules/event/src/main/java
+      sourceFile: com/intuit/wasabi/events/impl/EventsExportImpl.java
+    # Child of EventsExportImpl.class
+    - dir: modules/event/target/classes
+      file: com/intuit/wasabi/events/EventsExport.class
+      sourceDir: modules/event/src/main/java
+      sourceFile: com/intuit/wasabi/events/EventsExport.java
+    # Child of EventsExportImpl.class
+    - dir: modules/repository-datastax/target/classes
+      file: com/intuit/wasabi/repository/DatabaseRepository.class
+      sourceDir: modules/repository-datastax/src/main/java
+      sourceFile: com/intuit/wasabi/repository/DatabaseRepository.java
+phases:
+-
+  timeout: 60
+  cbmcArguments:
+    max-nondet-array-length: 10
+    unwind: 1
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 10
+    unwind: 1
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 20
+    unwind: 2
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 60
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 3
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 30
+    max-nondet-string-length: 10
+    unwind: 4
+    load-containing-class-only: true
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 50
+    max-nondet-string-length: 50
+    unwind: 4
+    load-containing-class-only: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 130
+    max-nondet-string-length: 110
+    unwind: 10
+    string-non-empty: true
+    java-assume-inputs-non-null: true
+-
+  timeout: 120
+  cbmcArguments:
+    classpath: '/tools/cbmc/models.jar:.'
+    max-nondet-array-length: 300
+    max-nondet-string-length: 100
+    unwind: 10
